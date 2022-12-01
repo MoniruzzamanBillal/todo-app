@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  background-image: linear-gradient(180deg, rgb(158, 255, 245),rgb(183, 116, 255));
+  max-width: 100%;
+  height: 100vh;
+  
+}
+
+.container .mainbox{
+  background-color: rgb(255, 255, 255);
+  height: 80vh;
+  width: 45%;
+  border-radius: 8px;
+  padding: 40px;
+  position: relative;
+  box-shadow: -1px -1px 15px rgba(0, 0, 0, 0.869);
+}
+
+.container .mainbox .inputSection{
+  display: flex;
+  flex-direction: row;
+}
+
+.container .mainbox .inputSection .left{
+  width: 85%;
+
+}
+
+.container .mainbox .inputSection .right{
+  text-align: center;
+  width: 14%;
+  cursor: pointer;
+}
+
+.container .mainbox .inputSection .right .button{
+  width: 100%;
+}
+
+.container .mainbox .todolist{
+  padding: 0;
+  max-height: 46vh;
+  overflow: auto;
+}
+
+
+.container .mainbox .todolist li{
+  list-style: none;
+  background-color: rgb(199, 192, 192);
+  border-radius: 6px;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 0px 16px;
+  font-size: 22px;
+  position: relative;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+
+.container .mainbox .todolist li span{
+  position: absolute;
+  background-color: red;
+  height: 100%;
+  width: 55px;
+  text-align: center;
+  right: -60px;
+  transition: .3s ease-in;
+}
+
+.container .mainbox .todolist li:hover span{
+  right: 0;
+}
+
+
+.footer{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  bottom: 0;
+  left: 60px;
+  font-size: 22px;
+  padding: 6px 9px;
+  font-weight: 900;
+  text-align: center;
+}
+
+
+
+
+
+
+
