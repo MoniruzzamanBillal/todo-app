@@ -7,6 +7,8 @@ show();
 button.addEventListener("click", () => {
   let storage = localStorage.getItem("todo");
 
+  let arr;
+
   if (storage === null) {
     arr = [];
   } else {
@@ -24,11 +26,12 @@ button.addEventListener("click", () => {
   localStorage.setItem("todo", JSON.stringify(arr));
   show();
 
-  input.value = "";
+  
 });
 
 function show() {
   let storage = localStorage.getItem("todo");
+  let arr;
 
   if (storage === null) {
     arr = [];
@@ -39,8 +42,23 @@ function show() {
   let html = "";
 
   arr.forEach((e, index) => {
-    html += `<li> ${e} <span><i class="fa-solid fa-trash del"></i></span></li>`;
+    html += `<li> ${e} <span><i class="fa-solid fa-trash del" onclick="del(${index})"></i></span></li>`;
   });
 
   ul.innerHTML = html;
+  input.value = "";
 }
+
+function del(index)
+{
+  let storage = localStorage.getItem("todo");
+  let arr;
+  arr = JSON.parse(storage);
+
+  arr.splice(index,1);
+  localStorage.setItem("todo", JSON.stringify(arr) );
+  show();
+}
+
+
+
