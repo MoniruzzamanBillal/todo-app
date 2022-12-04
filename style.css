@@ -13,7 +13,6 @@
 
 .container .mainbox{
   background-color: rgb(255, 255, 255);
-  height: 80vh;
   width: 45%;
   border-radius: 8px;
   padding: 40px;
@@ -41,6 +40,14 @@
   width: 100%;
 }
 
+.button:active{
+  transform: scale(0.98);
+}
+
+.del:active{
+  transform: scale(0.94);
+}
+
 .container .mainbox .todolist{
   padding: 0;
   max-height: 46vh;
@@ -65,7 +72,7 @@
 
 .container .mainbox .todolist li span{
   position: absolute;
-  background-color: red;
+  background-color: rgb(160 247 246);
   height: 100%;
   width: 55px;
   text-align: center;
