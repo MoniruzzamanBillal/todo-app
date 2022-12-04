@@ -2,7 +2,6 @@ let button = document.querySelector(".add");
 let input = document.querySelector(".inp");
 let ul = document.querySelector(".ul");
 let clear = document.querySelector(".clear");
-
 let num = document.querySelector(".num");
 let task = document.querySelector(".task");
 
@@ -13,25 +12,21 @@ clear.addEventListener("click", () => {
   show();
 });
 
+
 button.addEventListener("click", () => {
   let storage = localStorage.getItem("todo");
-
   let arr;
-
   if (storage === null) {
     arr = [];
   } else {
     arr = JSON.parse(storage);
   }
-
   let inpdata = input.value;
-
   if (inpdata.trim() != 0) {
     arr.push(input.value);
   } else {
     alert("enter your task");
   }
-
   localStorage.setItem("todo", JSON.stringify(arr));
   show();
 });
