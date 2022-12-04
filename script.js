@@ -2,6 +2,8 @@ let button = document.querySelector(".button");
 let input = document.querySelector(".inp");
 let ul = document.querySelector(".ul");
 
+show();
+
 button.addEventListener("click", () => {
   let storage = localStorage.getItem("todo");
 
@@ -11,14 +13,21 @@ button.addEventListener("click", () => {
     arr = JSON.parse(storage);
   }
 
-  arr.push(input.value);
+  let inpdata = input.value;
+
+  if (inpdata.trim() != 0) {
+    arr.push(input.value);
+  } else {
+    alert("enter your task");
+  }
+
   localStorage.setItem("todo", JSON.stringify(arr));
   show();
 
   input.value = "";
 });
 
-let show = () => {
+function show() {
   let storage = localStorage.getItem("todo");
 
   if (storage === null) {
@@ -34,4 +43,4 @@ let show = () => {
   });
 
   ul.innerHTML = html;
-};
+}
